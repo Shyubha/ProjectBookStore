@@ -12,73 +12,23 @@
 		"cataid" ,
 		"author"};
 
+
 }
-<div class = "table">
-<table class= "table table-bordered table-hover">
-		<thead>
-			
-	  <tr>
-      <th scope="col">Id</th>
-      <th scope="col">title</th>
-      <th scope="col">info</th>
-      <th scope="col">bookquantity</th>
-	  <th scope="col">price</th>
-	  <th scope="col">imgfile</th>
-	  <th scope="col">cataid</th>
-	  <th scope="col">author</th>
-    </tr></thead>
-				@{
-					foreach(ProjectBookStore.Models.Book item in ViewBag.list)
-					{
-					    
-						 
-		
-		<tbody>
-		
-		<tr>
-			<td>
-			@item.Id
-			</td>
-			
-			<td>
-			@item.title
-			</td>
-			
-			<td>
-			@item.info
-			</td>
-
-			<td>
-			@item.bookquantity
-			</td>
-
-			<td>
-			@item.price
-			</td>
-
-			<td>
-			@item.imgfile
-			</td>
-
-			<td>
-			@item.cataid
-			</td>
-
-			<td>
-			@item.author
-			</td>
-		</tr>
-		</tbody>
-	
-    
-							
-					}
-				}
-				
-				
-			</table>
-
-
+<div class="row">
+	@foreach(ProjectBookStore.Models.Book item in ViewBag.list)
+	{
+		<div class="col-lg-3 col-md-3 col-xs-12">
+		<div class="card" style="width: 18rem;">
+  <img src="~/Images/@item.imgfile" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Books</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Order</a>
+  </div>
+</div>
+</div>
+	}
 </div>
 
- 
+
+	

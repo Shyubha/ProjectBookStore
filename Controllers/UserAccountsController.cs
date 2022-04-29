@@ -47,7 +47,7 @@ namespace ProjectBookStore.Controllers
                 else if (result.role == 2)
                 {
                     //ViewBag.msg2 = "User";
-                    return RedirectToAction("Index","UserAccounts");
+                    return RedirectToAction("Index","Home");
                 }
             }
             // else
