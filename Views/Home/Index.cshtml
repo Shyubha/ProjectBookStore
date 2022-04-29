@@ -1,8 +1,84 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+@{
+	ViewData["Title"] = "Display Data";
+	string[] TableHeaders = new string[]
+{
+		"Id",
+		"title",
+		 "info" ,
+		"bookquantity" ,
+		"price",
+		"imgfile" ,
+		"cataid" ,
+		"author"};
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+}
+<div class = "table">
+<table class= "table table-bordered table-hover">
+		<thead>
+			
+	  <tr>
+      <th scope="col">Id</th>
+      <th scope="col">title</th>
+      <th scope="col">info</th>
+      <th scope="col">bookquantity</th>
+	  <th scope="col">price</th>
+	  <th scope="col">imgfile</th>
+	  <th scope="col">cataid</th>
+	  <th scope="col">author</th>
+    </tr></thead>
+				@{
+					foreach(ProjectBookStore.Models.Book item in ViewBag.list)
+					{
+					    
+						 
+		
+		<tbody>
+		
+		<tr>
+			<td>
+			@item.Id
+			</td>
+			
+			<td>
+			@item.title
+			</td>
+			
+			<td>
+			@item.info
+			</td>
+
+			<td>
+			@item.bookquantity
+			</td>
+
+			<td>
+			@item.price
+			</td>
+
+			<td>
+			@item.imgfile
+			</td>
+
+			<td>
+			@item.cataid
+			</td>
+
+			<td>
+			@item.author
+			</td>
+		</tr>
+		</tbody>
+	
+    
+							
+					}
+				}
+				
+				
+			</table>
+
+
 </div>
+
+ 

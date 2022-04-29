@@ -21,6 +21,10 @@ namespace ProjectBookStore.Controllers
         {
             _context = context;
         }
+        public IActionResult Index()
+        {
+            return View();
+        }
 
 
         [HttpGet]
@@ -37,13 +41,13 @@ namespace ProjectBookStore.Controllers
             {
                 if (result.role == 1)
                 {
-                    ViewBag.msg1 = "Admin";
-                    return RedirectToAction("Index", "Books");
+                  //  ViewBag.msg1 = "Admin";
+                    return RedirectToAction("Index","Books");
                 }
                 else if (result.role == 2)
                 {
-                    ViewBag.msg2 = "User";
-                    return RedirectToAction("Index", "UserAccounts");
+                    //ViewBag.msg2 = "User";
+                    return RedirectToAction("Index","UserAccounts");
                 }
             }
             // else
@@ -73,7 +77,7 @@ namespace ProjectBookStore.Controllers
 
             }
 
-            return RedirectToAction("Login", "UserAccounts");
+            return RedirectToAction("Login", "UserAccount");
 
 
         }

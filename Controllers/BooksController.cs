@@ -25,6 +25,8 @@ namespace ProjectBookStore.Controllers
         // GET: Books
         public async Task<IActionResult> Index()
         {
+       
+           
             return View(await _context.book.ToListAsync());
         }
 

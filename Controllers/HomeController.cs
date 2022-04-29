@@ -1,26 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProjectBookStore.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
+using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using ProjectBookStore.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjectBookStore.Controllers
 {
     public class HomeController : Controller
     {
+        
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
-        }
+            _context = context;
 
+        }
+        private readonly ApplicationDbContext _context;
         public IActionResult Index()
         {
+            ViewBag.list =_context.book.ToList();
             return View();
+        }
+        private void FetchData()
+        {
+
         }
 
         public IActionResult Privacy()
